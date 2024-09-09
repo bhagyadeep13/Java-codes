@@ -45,8 +45,6 @@ public class multiplication
             }
         }
         System.out.println();
-        print(a);
-        print(b);
         print(c);
 
     }

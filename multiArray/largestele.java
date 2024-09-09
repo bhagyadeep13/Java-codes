@@ -17,10 +17,7 @@ public class largestele
         {
             for(int j=0;j<4;j++)
             {
-                if(a[i][j]>lar)
-                {
-                    lar=a[i][j];
-                }
+                lar=Math.max(lar,a[i][j]);
             }
         }
         System.out.println(lar);

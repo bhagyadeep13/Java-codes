@@ -2,7 +2,7 @@ package Recursion;
 import java.util.*;
 public class fabonacci 
 {
-    static int fabo(int n)
+    static int fabo(int n)   // TIME COMPLEXITY -- O(N)
     {
        if(n==0||n==1)
        {

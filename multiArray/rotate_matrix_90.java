@@ -20,8 +20,8 @@ public class rotate_matrix_90
                     int temp=arr[i][j];
                     arr[i][j]=arr[j][i];
                     arr[j][i]=temp;
-                }
             }
+        }
             for(int i=0;i<m;i++)
             {
                int a=0,b=m-1;
