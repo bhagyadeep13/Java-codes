@@ -29,7 +29,7 @@ public class MinCost_climibing_Stairs
    public static void main(String[] args) 
    {
         int[] cost={10,15,20};
-
+        
         int[] dp= new int[cost.length]; // 'cost.length' to '0';
         Arrays.fill(dp,-1);
         int val= Math.min(climb(cost,cost.length-1,dp),climb(cost, cost.length-2, dp));
