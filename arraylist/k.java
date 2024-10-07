@@ -1,13 +1,9 @@
 package arraylist;
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
-
 public class k 
 {
-    public static String flip(String s1)
+    public static String flip(String s1) // flip 0 to 1 and 1 to 0
+
     {
         StringBuilder s2=new StringBuilder(s1);
         for(int i=0;i<s2.length();i++)
@@ -17,7 +13,8 @@ public class k
         }
         return s2.toString();
     }
-    public static int helper2(int n1,String s1)
+    
+    public static int helper2(int n1,String s1) // for counting 0
     {
         int i=0,j=0;
         int count=1;
@@ -54,7 +51,8 @@ public class k
         }
         return count;
     }
-    public static int helper1(int n1,String s1)
+
+    public static int helper1(int n1,String s1) // for counting 1
     {
         int i=0,j=0;
         int count=1;
@@ -100,7 +98,6 @@ public class k
         {   
             n1=sc.nextInt();
             s1=sc.next();
-            System.out.println(helper2(n1, s1));
             System.out.println(Math.min(helper2(n1,s1),helper1(n1,s1)));
             t--;
         }

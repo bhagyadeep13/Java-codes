@@ -4,8 +4,7 @@ public class gcd
 {
     static int greatest(int a,int b)
     {
-        if(b%a==0)
-        return a;
+        if(b%a==0) return a;
         return greatest(b%a,a);
         }
     public static void main(String[] args) {

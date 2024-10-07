@@ -12,7 +12,7 @@ public class substring
         substr(i+1, s, s1+s.charAt(i));
         substr(i+1,s,s1);
     }
-    static void substringiterative(String s)   // not consecutive
+    static void substringiterative(String s)   // consecutive
     {
         for(int i=0;i<s.length();i++)
         {
@@ -27,6 +27,7 @@ public class substring
     String s=sc.nextLine();
     substr(0,s,"");
     System.out.println();
+
     substringiterative(s);
    }    
 }
