@@ -20,7 +20,6 @@ public  class basic
         System.out.println();
         Collections.sort(al);
         System.out.println(al);
-        
     }
     
 }

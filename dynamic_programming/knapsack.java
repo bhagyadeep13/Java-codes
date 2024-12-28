@@ -1,3 +1,5 @@
+// IMPORTANT QUESTION OF THE DYNAMIC PROGRAMMING
+
 package dynamic_programming;
 public class knapsack 
 {
