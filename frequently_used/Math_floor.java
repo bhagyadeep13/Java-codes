@@ -1,6 +1,6 @@
 package frequently_used;
 
-public class a 
+public class Math_floor 
 {
     public static void main(String[] args) {
         float d= 10/3 ;
