@@ -11,7 +11,7 @@ public class Skip_A_character
         }
         if(s.charAt(i)!='a')
         {
-        s1=s1+s.charAt(i);
+            s1=s1+s.charAt(i);
         }
         print(i+1,s,s1);
     }

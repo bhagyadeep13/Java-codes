@@ -3,7 +3,7 @@ import java.util.*;
 public class power 
 {
     static int pow(int a,int b)
-    {
+    {                                   // T.C -- O(B)
         if(a==1||b==0)
         return 1;
         return a*pow(a,b-1);

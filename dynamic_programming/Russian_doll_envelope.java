@@ -40,18 +40,13 @@ public class Russian_doll_envelope
             p[i] = newPair;
         }
         Arrays.sort(p);
-        List<Integer> al=new ArrayList<>();
-        for(int i=0;i<p.length;i++)
-        {
-            al.add(p[i].h);
-        }
         int[] dp=new int[a.length];
         int max=Integer.MIN_VALUE;
-        for(int i=0;i<al.size();i++)
+        for(int i=0;i<p.length;i++)
         {
             for(int j=0;j<i;j++)
             {
-                if(al.get(j)<al.get(i))
+                if(p[i].w<p[i].h)
                 {
                     dp[i] = Math.max(dp[i],dp[j]);
                 }
