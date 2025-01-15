@@ -1,6 +1,6 @@
 package Greedy;
 import java.util.*;
-public class e 
+public class hasNext 
 {
     public static void main(String[] args) 
     {
