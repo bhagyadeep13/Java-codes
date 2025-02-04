@@ -6,6 +6,7 @@ The value x XOR num1 is minimal.
 Note that XOR is the bitwise XOR operation.
 Return the integer x. The test cases are generated such that x is uniquely determined.
 The number of set bits of an integer is the number of 1's in its binary representation. */
+
 package Bit_manipulation;
 import java.util.*;
 public class minimize_XOR 

@@ -22,7 +22,7 @@ public class basic_multi_ArrayList
             List<Integer> l1=l.get(i);
             for(int j=0;j<l1.size();j++)
             {
-                System.out.print(l.get(i).get(j)+" ");
+                System.out.print(l1.get(j)+" ");
             }
             System.out.println();
         }
