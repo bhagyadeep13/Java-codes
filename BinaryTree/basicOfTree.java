@@ -1,8 +1,5 @@
 package BinaryTree;
-
 import java.util.*;
-import java.util.Collections;
-
 public class basicOfTree
 {
 static class Node

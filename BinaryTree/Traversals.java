@@ -96,7 +96,7 @@ static class Node
         Postorder(root.right);
         System.out.print(root.data+" ");
    }
-   static void reveseInorder(Node root)
+   static void reveseInorder(Node root)    // reverse inorder traversal
    {
      if(root==null) return;
      reveseInorder(root.right);

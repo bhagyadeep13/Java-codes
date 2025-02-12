@@ -1,5 +1,5 @@
 package Bit_manipulation;
-
+import java.util.*;
 public class swap_two_num 
 {
     public static void main(String[] args) {

@@ -13,7 +13,7 @@ public class rotate_matrix_90
                 arr[i][j]=sc.nextInt();
             }
         }
-        for(int i=0;i<m;i++)
+        for(int i=0;i<m;i++)       // transpose of matrix
         {
             for(int j=0;j<i;j++)
             {
@@ -22,7 +22,7 @@ public class rotate_matrix_90
                     arr[j][i]=temp;
             }
         }
-            for(int i=0;i<m;i++)
+            for(int i=0;i<m;i++)  // reverse each row 
             {
                int a=0,b=m-1;
                while(a<b)
