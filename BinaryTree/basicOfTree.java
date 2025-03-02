@@ -15,25 +15,22 @@ static class Node
 }
    static int level(Node root)      // NUMBER OF LEVELS IN TREE
    {
-        if(root==null)
-        return 0;
+        if(root==null)  return 0;
         return  1 + Math.max(level(root.left),level(root.right));
    }
 
    static int min(Node root)        // MIN VALUE IN TREE
    {
-    if(root==null)
-    return Integer.MAX_VALUE;
+    if(root==null) return Integer.MAX_VALUE;
     return Math.min(root.data,Math.min(min(root.left),min(root.right)));
    }
 
    static int max(Node root)        //  MAX VALUE IN THE TREE
    {
-    if(root==null)
-    return Integer.MIN_VALUE;
+    if(root==null) return Integer.MIN_VALUE;
     return Math.max(root.data,Math.max(max(root.left),max(root.right)));
    }
-
+   
    static int pro(Node root)        //PRODUCT OF ALL NODES IN THE TREE
    {
         if(root.data!=0)

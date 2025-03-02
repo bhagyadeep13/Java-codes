@@ -1,6 +1,6 @@
 package Bit_manipulation;
 import java.util.*;
-public class a 
+public class Off_RightMost_bit 
 {
     public static int helper1(int n)          // T.C -- O(LOG(N))
     {

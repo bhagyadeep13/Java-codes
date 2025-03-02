@@ -35,12 +35,11 @@ public class level_order_Traversal
           if(root==null) return;
           List<Integer> al=new ArrayList<>();
           if(level==n)
-      {
-          al.add(root.data);
-          System.out.println(al);
-      }
-      if(root.left!=null) nthlevel(root.left, level+1, n);
-      if(root.right!=null) nthlevel(root.right, level+1, n);
+          {
+               al.add(root.data);
+          }
+          if(root.left!=null) nthlevel(root.left, level+1, n);
+          if(root.right!=null) nthlevel(root.right, level+1, n);
      }
 
      static void levelordersimple(Node root)  //SIMPLE LEVEL ORDER TRAVERSAL USING QUEUE

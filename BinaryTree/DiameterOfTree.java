@@ -34,8 +34,7 @@ public class DiameterOfTree
 
     static int diameter(Node root)      // DIAMETER OF THE TREE
     {
-        if(root==null)
-        return 0;
+        if(root==null) return 0;
         int d = level(root.left) + level(root.right);
         int lst = diameter(root.left);
         int rst = diameter(root.right);

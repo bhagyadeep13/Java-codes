@@ -40,7 +40,6 @@ public class Inv_same_symmetric
         return true;
 
     }
-
     static void invert(Node root)       // INVERT THE BINARY TREE
     {
         if(root==null)
@@ -73,5 +72,6 @@ public class Inv_same_symmetric
     System.out.println();
     System.out.println(same(a,a));
     System.out.println(symmetric(g));
+    System.out.println(same(a, b));
     }
 }
