@@ -15,7 +15,7 @@ public class prime_num
     }
     public static void main(String[] args) 
     {
-        int n=6;
+        int n=4;
         System.out.println(prime(n));
     }
 }
