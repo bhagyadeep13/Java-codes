@@ -37,19 +37,13 @@ public class Topological_sort_BFS
         List<Integer> c=new ArrayList<>();
         List<Integer> d=new ArrayList<>();
         List<Integer> e=new ArrayList<>();
-        //List<Integer> f=new ArrayList<>();
-        /*a.add(2); a.add(3);
-        b.add(2); b.add(4);
-        d.add(2);
-        e.add(2); e.add(3); e.add(5);
-        f.add(1);*/
         a.add(1);
         b.add(2); b.add(3);
         c.add(3); c.add(4);
         e.add(3);
         adj.add(a); adj.add(b); adj.add(c); adj.add(d); adj.add(e);
         int n=adj.size();
-        int[] inDegree= new int[n];  // in degree array 
+        int[] inDegree= new int[n];  // In degree array 
         for(int i=0;i<adj.size();i++)
         {
             for(int j=0;j<adj.get(i).size();j++)
