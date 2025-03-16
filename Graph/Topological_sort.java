@@ -38,7 +38,7 @@ public class Topological_sort
                 dfs(vis,adj,i,al);
             }
         }
-        for(int i=al.size()-1;i>=0;i--)
+        for(int i=al.size()-1;i>=0;i--)  // reverse the list 
         {
             System.out.print(al.get(i)+" ");
         }

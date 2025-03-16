@@ -47,11 +47,10 @@ public class Eventual_safe_states
                 q.add(i);
             }
         }
-
         while(q.size()>0)
-        {
-            int front = q.remove();
-            ans.add(front);
+        {                           // ek ek element remove karo or vo jisse conected h
+            int front = q.remove();  // unki degree inDegree array me m minus 1 kar do or 
+            ans.add(front);           // check karo ki agar vo inDegree[val]==0 (q.add)
             for(int i=0;i<all.get(front).size();i++)
             {
                 int val =all.get(front).get(i);
@@ -62,7 +61,7 @@ public class Eventual_safe_states
                 }
             }
         }
-        Collections.sort(ans);
+        Collections.sort(ans); // sorting for ascending order
         System.out.println(ans);
     }
 }

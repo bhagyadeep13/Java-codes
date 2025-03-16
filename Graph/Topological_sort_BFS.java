@@ -2,6 +2,7 @@ package Graph;
 import java.util.*;
 public class Topological_sort_BFS 
 {
+    // Kahn's algorithm
     public static void bfs(List<List<Integer>> adj,int[] deg,boolean[] vis,List<Integer> al)
     {
         Queue<Integer> q=new ArrayDeque<>();

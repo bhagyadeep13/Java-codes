@@ -8,7 +8,7 @@ import java.util.*;
 public class Course_Schedule 
 {
 
-    public static void main(String[] args) 
+    public static void main(String[] args)   
     {
         int[][] pre = {{1,0}};
         int n=2;
@@ -25,8 +25,7 @@ public class Course_Schedule
             int b=pre[i][1];
             adj.get(b).add(a);
         }
-
-        System.out.println(adj);
+        
         boolean[] vis = new boolean[n];
         int[] inDegree= new int[n];
 
