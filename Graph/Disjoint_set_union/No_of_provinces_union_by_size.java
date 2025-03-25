@@ -1,0 +1,65 @@
+package Graph.Disjoint_set_union;
+
+public class No_of_provinces_union_by_size 
+{
+    static int[] parent;
+    static int[] size;
+    public static int find(int a) // return the leader of a any Node
+    {
+        if(parent[a]==a) return a;
+        return find(parent[a]);
+    }
+    /*public static int find(int a) // return the leader of a any Node
+    {
+        if(parent[a]==a) return a;
+        else return parent[a] = find(parent[a]);
+    }*/
+    public static void union(int a,int b)
+    {
+        a=find(a); // a ka leader a me store karo
+        a=find(b); // b ka leader b me store karo
+        if(a!=b)
+        {
+            if(size[a]>size[b]) // a should have to be the parent of b
+            {
+                parent[b]=a;
+                size[a] = size[a]+size[b];
+            }
+            else  // b should have to be parent of a    
+            {
+                parent[a]=b;
+                size[b] = size[b]+size[a];
+            }
+        }
+    }
+    public static void main(String[] args) 
+    {
+        int[][] adj = {{1,1,0},{1,1,0},{0,0,1}};
+        int n=adj.length;
+        parent=new int[n+1];
+        size=new int[n+1];
+        for(int i=1;i<=n;i++)
+        {
+            parent[i]=i;
+            size[i]=1;
+        }
+        for(int i=0;i<n;i++)             // T.C -> O(N*N)
+        {
+            for(int j=0;j<n;j++)
+            {
+                // i+1 -> ith node
+                // j+1 -> jth node
+                if(i!=j && adj[i][j]==1)
+                {
+                    union(i+1,j+1);
+                }
+            }
+        }
+        int count=0;
+        for(int i=1;i<parent.length;i++)
+        {
+            if(parent[i]==i) count++;
+        }
+        System.out.println(count);
+    }
+}

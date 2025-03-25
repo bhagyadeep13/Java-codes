@@ -1,6 +1,6 @@
 package Graph;
 import java.util.*;
-public class Dijastra_Algorithm 
+public class Dijkstra_Algorithm 
 {
     static class Pair implements Comparable<Pair>
     {

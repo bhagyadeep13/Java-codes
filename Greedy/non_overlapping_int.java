@@ -34,6 +34,7 @@ public class non_overlapping_int
         Arrays.sort(a,(a1,a2) -> a1[0]-a2[0]);
         List<List<Integer>> all=new ArrayList<>();
         helper(a,all);
+        System.out.println(all);
         System.out.println(a.length-all.size());  // minimum no. of intervals to remove
 
     }

@@ -2,11 +2,11 @@ package multiArray;
 import java.util.Scanner;
 public class spiral 
 {
-
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int[][] a=new int[3][4];
-        int m=a.length;
+    public static void main(String[] args) 
+    {
+    Scanner sc=new Scanner(System.in);
+    int[][] a=new int[3][4];
+    int m=a.length;
     int n=a[0].length;    
     for(int i=0;i<m;i++)
     {

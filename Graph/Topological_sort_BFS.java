@@ -3,7 +3,7 @@ import java.util.*;
 public class Topological_sort_BFS 
 {
     // Kahn's algorithm
-    public static void bfs(List<List<Integer>> adj,int[] deg,boolean[] vis,List<Integer> al)
+    public static void bfs(List<List<Integer>> adj,int[] deg,List<Integer> al)
     {
         Queue<Integer> q=new ArrayDeque<>();
         for(int i=0;i<adj.size();i++)
@@ -11,7 +11,6 @@ public class Topological_sort_BFS
             if(deg[i]==0)
             {
                 q.add(i);
-                vis[i]=true;
             }
         }
         while(q.size()>0)
@@ -25,7 +24,6 @@ public class Topological_sort_BFS
                 if(deg[val]==0)
                 {
                     q.add(val);
-                    vis[val]=true;
                 }
             }
         }
@@ -53,8 +51,7 @@ public class Topological_sort_BFS
             }
         }
         List<Integer> al=new ArrayList<>();
-        boolean[] vis=new boolean[n];
-        bfs(adj, inDegree, vis, al);
+        bfs(adj, inDegree,al);
         System.out.println(al);
     }
 }
