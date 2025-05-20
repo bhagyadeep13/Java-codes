@@ -38,7 +38,7 @@ public class Prims_Algorithm
         {
             List<Pair> al=new ArrayList<>();
             adj.add(al);
-        }
+        }  
         List<Pair> a =adj.get(0);
         List<Pair> b =adj.get(1);
         List<Pair> c =adj.get(2);

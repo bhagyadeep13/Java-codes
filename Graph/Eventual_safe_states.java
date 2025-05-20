@@ -62,6 +62,6 @@ public class Eventual_safe_states
             }
         }
         Collections.sort(ans); // sorting for ascending order
-        System.out.println(ans);
+        System.out.println(ans); //list of nodes that are not the part of any cycle
     }
 }

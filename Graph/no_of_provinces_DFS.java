@@ -19,7 +19,7 @@ public class no_of_provinces_DFS
     }
     public static void main(String[] args) 
     {
-        int[][] adj={{1,1,0},{1,1,0},{0,0,1}};
+        int[][] adj={{0,1,0},{1,0,1},{0,1,0}};
         int n=adj.length;
         int count=0;
         boolean[] vis=new boolean[n];

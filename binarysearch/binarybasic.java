@@ -17,7 +17,6 @@ public class binarybasic
             {
                 st=mid+1;
             }
-            else
             if(t<a[mid])
             {
                 end=mid-1;

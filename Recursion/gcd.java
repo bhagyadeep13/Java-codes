@@ -6,7 +6,8 @@ public class gcd
     {
         if(b%a==0) return a;
         return greatest(b%a,a);
-        }
+
+    }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n1=sc.nextInt();

@@ -17,7 +17,7 @@ public class spiral
     }  
     int minr=0,minc=0;
     int maxr=m-1,maxc=n-1;
-    while(minr<=maxr&&minc<=maxc)
+    while(minr<=maxr && minc<=maxc)
     {
     for(int j=minc;j<=maxc;j++)
     {

@@ -4,10 +4,7 @@ public class bianryseach_recursion
 {
     static boolean search(int[] a,int t,int st,int end)
     {
-        if(st<=end)
-        {
-            return false;
-        }
+        if(st>=end) return false;
         int mid=st+(end-st)/2;
         if(a[mid]==t)
         {
@@ -22,7 +19,6 @@ public class bianryseach_recursion
         {
             return search(a,t,mid+1,end);
         }
-    
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

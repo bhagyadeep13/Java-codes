@@ -33,10 +33,9 @@ public class level_order_Traversal
      static void nthlevel(Node root,int level,int n)  // LEVELORDER BY NTH LEVEL
      {
           if(root==null) return;
-          List<Integer> al=new ArrayList<>();
           if(level==n)
           {
-               al.add(root.data);
+               System.out.print(root.data+" ");
           }
           if(root.left!=null) nthlevel(root.left, level+1, n);
           if(root.right!=null) nthlevel(root.right, level+1, n);

@@ -28,6 +28,7 @@ public class Cycle_detection_Directed_graph
                     vis[val]=true;
                 }
             }
+            al.add(front);
         }
     }
     public static void main(String[] args) 
@@ -60,7 +61,7 @@ public class Cycle_detection_Directed_graph
         }
         List<Integer> al=new ArrayList<>();
         boolean[] vis=new boolean[n];
-        bfs(adj, inDegree, vis, al);
+        System.out.println(al);
         if(al.size()!=n)    // cycle is present
         {
             System.out.println(true);

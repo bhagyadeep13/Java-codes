@@ -16,7 +16,7 @@ public class Retundant_Connection
     public static int find(int a)
     {
         if(parent[a]==a) return a;
-        else return find(parent[a]);
+        else return parent[a] = find(parent[a]);
     }
     public static void union(int a,int b)
     {

@@ -34,8 +34,8 @@ public class Longest_Palindromic
     }
     public static void main(String[] args) 
     {
-        StringBuilder s=new StringBuilder("bbbab");
-        StringBuilder s1=new StringBuilder("bbbab");
+        StringBuilder s=new StringBuilder("bbbaaaa");
+        StringBuilder s1=new StringBuilder("bbbaaaa");
         s1.reverse();
         int a = s.length();
         int b = s1.length();
