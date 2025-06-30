@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tailwind Toast</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .animate-slide-down {
+      animation: slideDown 0.4s ease-out;
+    }
+
+    .progress-bar-animate {
+      width: 100%;
+      animation: shrinkBar 2s linear forwards;
+    }
+
+    @keyframes shrinkBar {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0%;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <!-- Trigger Button -->
+  <button onclick="showToast()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-green-700">
+    Show Toast
+  </button>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed top-8 right-10 max-w-sm w-full hidden bg-yellow-50 text-white rounded-lg shadow-lg overflow-hidden z-50 border-gray-800">
+    <div class="flex items-start px-4 py-3 space-x-3 animate-slide-down">
+      <!-- Icon -->
+      <div class="mt-1">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="#4CAF50">
+          <path d="M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z"/>
+        </svg>
+      </div>
+      <!-- Message -->
+      <div class="flex-1 text-black mt-0.5">Login SuccessFully.</div>
+      <!-- Close Button -->
+      <button onclick="hideToast()" class="text-white hover:text-red-400">
+        <svg viewBox="0 0 14 16" width="14" height="16">
+          <path fill-rule="evenodd" d="M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Progress Bar -->
+    <div id="toast-progress" class="h-2 bg-yellow-500 w-full"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    let toastTimeout;
+
+    function showToast() {
+      const toast = document.getElementById("toast");
+      const progress = document.getElementById("toast-progress");
+
+      clearTimeout(toastTimeout);
+
+      toast.classList.remove("hidden");
+      // Restart animation by reflowing
+      progress.classList.remove("progress-bar-animate");
+      void progress.offsetWidth; // force reflow
+      progress.classList.add("progress-bar-animate");
+
+      toastTimeout = setTimeout(() => {
+        hideToast();
+      }, 2000);
+    }
+
+    function hideToast() {
+      const toast = document.getElementById("toast");
+      const progress = document.getElementById("toast-progress");
+
+      toast.classList.add("hidden");
+      progress.classList.remove("progress-bar-animate");
+    }
+  </script>
+
+</body>
+</html>

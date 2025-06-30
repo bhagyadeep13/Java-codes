@@ -1,8 +1,8 @@
 package Strings;
 import java.util.*;
-public class subsequence 
+public class substring 
 {
-    public static void  subsequencecount(String s,List<String> al)
+    public static void  subStringcount(String s,List<String> al)
     {
         for(int i=0;i<s.length();i++)
         {
@@ -16,7 +16,7 @@ public class subsequence
     {
         List<String> al=new ArrayList<>();
         String s="abc";
-        subsequencecount(s, al);
+        subStringcount(s, al);
         for(int i=0;i<al.size();i++)
         {
             System.out.print(al.get(i)+" ");

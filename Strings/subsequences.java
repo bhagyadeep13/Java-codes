@@ -1,6 +1,6 @@
 package Strings;
 import java.util.*;
-public class s 
+public class subsequences 
 {
     public static void subString(String s,String s1,int i)
     {
@@ -14,7 +14,7 @@ public class s
     }
        public static void main(String[] args) 
     {
-        String s="abccccdd";
+        String s="abc";
         List<String> al=new ArrayList<>();
         subString(s,"",0);
     }

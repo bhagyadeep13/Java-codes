@@ -53,7 +53,7 @@ import java.util.*;
                     else
                     if(ch=='*' || ch=='/')
                     {
-                        if(op.peek()=='-' || op.peek()=='+') op.push(ch);
+                        if(op.peek()=='-' || op.peek()=='+')  op.push(ch);
                         else
                         {
                             int val2 = st.pop();

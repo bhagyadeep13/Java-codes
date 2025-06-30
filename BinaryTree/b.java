@@ -34,8 +34,8 @@ public class b
     {
         if(root1==null && root2==null) return true;
         if(root1==null || root2==null) return false;
-        if(root1.data==root2.data) return true;
-        return same(root1.left,root2.left) && same(root1.right,root2.right);
+        if(root1.data!=root2.data) return false;
+        return same(root1.left,root2.left) || same(root1.right,root2.right);
     }
 
     public static boolean symmetric(Node root)
@@ -48,21 +48,22 @@ public class b
     {
         Node a=new Node(1);
         Node b=new Node(2);
-        Node c=new Node(3);
+        Node c=new Node(2);
         Node d=new Node(4);
         Node e=new Node(5);
-        Node f=new Node(6);
+        Node f=new Node(4);
+        Node g=new Node(5);
 
         a.left=b; a.right=c;
         b.left=d; b.right=e;
-        c.right=f;
+        c.left=f; c.right=g;
 
         display(a);
-        invert(a);
+        //invert(a);
         System.out.println();
         display(a);
         System.out.println();
-        System.out.println(symmetric(a));
+        System.out.println(same(b,c));
         
     }
 }
