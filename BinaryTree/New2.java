@@ -1,5 +1,9 @@
 package BinaryTree;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+import java.util.Stack;
+
 public class New2 
 {
    static class Node 
@@ -66,7 +70,7 @@ public class New2
     int a = level(root.left) + level(root.right);
     int left = diameter(root.left);
     int right = diameter(root.right);
-    return Math.max(a,left+right);
+    return Math.max(a,Math.max(left,right));
   }
 
   public static void preorder(Node root)
@@ -76,6 +80,32 @@ public class New2
       System.out.print(temp.data+" ");
       preorder(temp.left);
       preorder(temp.right);
+  }
+  public static void preorderIterative(Node root)
+{
+    if(root==null) return;
+    Stack<Node> st =new Stack<>();
+    st.push(root);
+    while(st.size()>0)
+    {
+        Node n = st.pop();
+        System.out.print(n.data+" ");
+        if(n.right!=null) st.push(n.right);
+        if(n.left!=null) st.push(n.left);
+    }
+}
+  public static void leveltraversal(Node root)
+  {
+    if(root==null) return;
+    Queue<Node> q=new ArrayDeque<>();
+    q.add(root);
+    while(q.size()>0)
+    {
+      Node front = q.remove();
+      System.out.print(front.data+" ");
+      if(front.left!=null) q.add(front.left);
+      if(front.right!=null) q.add(front.right);
+    }
   }
   public static void inorder(Node root)
   {
@@ -92,6 +122,16 @@ public class New2
       postorder(root.left);
       postorder(root.right);
       System.out.print(root.data+" ");
+  }
+  public static void LevelOrderNextLine(Node root,int level,int n)
+  {
+    if(root==null) return;
+    if(level==n)
+    {
+      System.out.print(root.data+" ");
+    }
+    if(root.left!=null) LevelOrderNextLine(root.left, level+1, n);
+    if(root.right!=null) LevelOrderNextLine(root.right, level+1, n);
   }
     public static void main(String[] args) 
     {
@@ -123,6 +163,11 @@ public class New2
         System.out.println(same(a, a));
         System.out.println(symmetric(a));
         System.out.println(diameter(a));
-        
+        for(int i=0;i<level(a);i++)
+        {
+          LevelOrderNextLine(a, 0, i);
+          System.out.println();
+        }
+        preorderIterative(a);
     }
 }
