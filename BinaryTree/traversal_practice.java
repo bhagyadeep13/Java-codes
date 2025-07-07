@@ -4,16 +4,16 @@ import java.util.Stack;
 
 public class traversal_practice 
 {
-   static class Node 
+  static class Node 
   {
     Node root;
     Node left;
     Node right;
-  int data;
-  Node(int data)
-  {
-    this.data = data;
-  }
+    int data;
+    Node(int data)
+    {
+      this.data = data;
+    }
 }
 
 public static void postorderiterative(Node root)
@@ -42,6 +42,36 @@ public static void postorder(Node root)
       postorder(temp.right);
     System.out.print(temp.data+" ");
 }
+public static void inorder(Node root)
+{
+    if(root==null) return;
+    Node temp = root;
+    Stack<Node> st=new Stack<>();
+    while(true)
+    {
+        if(temp!=null)
+        {
+            st.push(temp);
+            temp=temp.left;
+        }
+        else
+        {
+            if(st.size()==0) break;
+            Node n = st.pop();
+            System.out.print(n.data+" ");
+            temp = n.right;
+        }
+    }
+  }
+    public static void inorderSimple(Node root)
+    {
+      if(root==null) return;
+      Node temp = root; 
+      inorderSimple(root.left);
+      System.out.print(root.data+" ");
+      inorderSimple(root.right);
+    }
+ 
 public static void main(String[] args) 
 {
         Node a=new Node(1);
@@ -58,5 +88,9 @@ public static void main(String[] args)
 
         System.out.println();
         postorderiterative(a);
+        System.out.println();
+        inorder(a);
+        System.out.println();
+        inorderSimple(a);
     }
-}
+  }

@@ -133,6 +133,15 @@ public class New2
     if(root.left!=null) LevelOrderNextLine(root.left, level+1, n);
     if(root.right!=null) LevelOrderNextLine(root.right, level+1, n);
   }
+
+  public static boolean isBalanced(Node root)
+  {
+    if(root==null) return true;
+    int left = level(root.left);
+    int right = level(root.right);
+    if(left-right<=1) return true;
+    else return false;
+  }
     public static void main(String[] args) 
     {
         Node a=new Node(1);
@@ -169,5 +178,7 @@ public class New2
           System.out.println();
         }
         preorderIterative(a);
+        System.out.println();
+        System.out.println(isBalanced(a));
     }
 }
