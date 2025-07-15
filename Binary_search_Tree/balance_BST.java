@@ -1,5 +1,10 @@
 package Binary_search_Tree;
 import java.util.*;
+
+
+// Logic --> 1) traverse the tree using inorder and get sorted list then make new balanced tree
+        //   2) as inorder always create balanced binary tree
+
 public class balance_BST 
 {
     static class Node
@@ -30,7 +35,7 @@ public class balance_BST
             inorder(root.right,al);
         }
 
-        static Node balanced(List<Integer> al,int l,int h)
+        static Node balanced(List<Integer> al,int l,int h) 
         {
             if(l>h)
             return null;

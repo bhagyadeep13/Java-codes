@@ -1,21 +1,21 @@
 package Recursion;
 import java.util.*;
-public class substring 
+public class subsequences 
 {
-    static void substr(int i,String s,String s1)  // not consecutive(substring)
+    static void subsequences(int i,String s,String s1)  // T.C == O(POW(2,N))
     {
         if(i==s.length())
         {
         System.out.print(s1+" ");
         return;
         }
-        substr(i+1, s, s1+s.charAt(i));
-        substr(i+1,s,s1);
+        subsequences(i+1, s, s1+s.charAt(i));
+        subsequences(i+1,s,s1);
     } 
    public static void main(String[] args) {
     Scanner sc=new Scanner(System.in);
     String s=sc.nextLine();
-    substr(0,s,"");
+    subsequences(0,s,"");
     System.out.println();
    }    
 }

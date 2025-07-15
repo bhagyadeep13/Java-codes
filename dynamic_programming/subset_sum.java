@@ -2,59 +2,87 @@ package dynamic_programming;
 import java.util.*;
 public class subset_sum 
 {
-    public static boolean subset(int i,int t,int[] nums)// TIME COMPLEXITY -- O(POW(2,N))
-    {
-        if(i==nums.length)
-        {
-            if(t==0) return true;
-            else return false;
-        }
-        boolean skip = subset(i+1, t, nums);
-        if(t-nums[i]<0) return skip;      // Only for +ve numbers in array
-        boolean take= subset(i+1, t-nums[i], nums);
-        return skip || take;
-    }
 
-    public static boolean subset1(int i,int t,int[] nums,int[][] dp)// TIME COMPLEXITY -- O(POW(2,N))
+    // knapsack related problem
+    public static boolean subsetsum(int[] a,int n,int t) // T.C -- O(POW(2,N))
     {
-        if(i==nums.length)
+        if(t==0) return true;
+        if(n<0) return false;
+        if(a[n]<=t)
         {
-            if(t==0) return true;
-            else return false;
+            boolean skip = subsetsum(a,n-1,t);
+            boolean take = subsetsum(a, n-1, t-a[n]);
+            return skip || take;
         }
-        if(dp[i][t]!=-1) 
-        {
-            return (dp[i][t]==1);
-        }
-        boolean ans= false;
-        boolean skip = subset1(i+1, t, nums,dp);
-        if(t-nums[i]<0) ans=skip;
         else
         {
-            boolean take = subset1(i+1, t-nums[i], nums,dp);
-            ans = take || skip;
+            return subsetsum(a,n-1,t);
         }
-        if(ans==true) dp[i][t] = 1;
-        else dp[i][t] = 0;
-        return ans;
+    }
+    public static boolean helperTabu(int[] arr,int sum,boolean[][] dp) // this code works only for +ve integers 
+    {
+        int n = arr.length;
+        for(int i=0;i<=n;i++)
+        {
+            for(int j=0;j<=sum;j++)
+            {
+                if(i==0)
+                {
+                    dp[i][j] = false;
+                }
+                else
+                if(j==0)
+                {
+                    dp[i][j]= true;
+                }
+            }
+        }
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=sum;j++)
+            {
+                boolean skip = dp[i-1][j];
+                if(arr[i-1]<=j)
+                {
+                    boolean take = dp[i-1][j-arr[i-1]];
+                    dp[i][j] = skip || take;
+                }
+                else
+                    dp[i][j] = skip;
+            }
+        }
+        return dp[n][sum];
+    }
+
+    public static boolean subsetsumDP(int[] a,int n,int t,Boolean[][] dp) // T.C -- O(N*T);
+    {
+        if(t==0) return true;
+        if(n<0) return false;
+        if(dp[n][t]!=null) return dp[n][t];
+        if(a[n]<=t)
+        {
+            boolean skip = subsetsum(a,n-1,t);
+            boolean take = subsetsum(a, n-1, t-a[n]);
+            return dp[n][t] = skip || take;
+        }
+        else
+        {
+            return dp[n][t] = subsetsum(a,n-1,t);
+        }
     }
     public static void main(String[] args) 
     {
-        int[] a={0,8,-1,2,4};
-        int t= 7;
-        System.out.println(subset(0, t, a));
+        int[] a={0,8,3,2,4};
+        int t=11;
+        System.out.println(subsetsum(a, a.length-1, t));
 
         // i from '0' to 'n-1'
         // t from 't' to '0'
-        int[][] b=new int[a.length][t+1];
-        for(int i=0;i<b.length;i++)
-        {
-            for(int j=0;j<b[0].length;j++)
-            {
-                b[i][j]=-1;
-            }
-        }
-        System.out.println(subset1(0, t, a, b));
+        Boolean[][] dp = new Boolean[a.length][t+1];
+        System.out.println(subsetsumDP(a,a.length-1,t,dp));
+
+        boolean[][] dp1 = new boolean[a.length+1][t+1];
+        System.out.println(helperTabu(a, t, dp1));
         
     }
 }

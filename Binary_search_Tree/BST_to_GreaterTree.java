@@ -21,8 +21,8 @@ public class BST_to_GreaterTree
             display(root.left);
             display(root.right);
         }
-        static void inorder(Node root,List<Node> al)
-        {
+        static void inorder(Node root,List<Node> al)  // ULTA INORDER CHALA DO
+        {                               // T.C -- O(N)
         if(root==null) return;
         inorder(root.left, al);
         al.add(root);

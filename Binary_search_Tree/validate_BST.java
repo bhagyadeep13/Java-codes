@@ -33,7 +33,6 @@ public class validate_BST
             flag=false;
             long b=max(root.right);
             return Math.max(root.data,Math.max(a,b));
-
         }
 
         static long min(Node root)
@@ -48,7 +47,7 @@ public class validate_BST
 
         }
 
-        static boolean validBST(Node root)      // METHOD--1 [TC--O(N)]
+        static boolean validBST(Node root)      // METHOD--1 [TC--O(N)] [SC-O(N)]
         {
             if(root==null) return true;
             flag=true;
@@ -58,7 +57,7 @@ public class validate_BST
         }
 
 
-        static boolean validBST2(Node root)  //    METHOD--2 [TC--O(N)]
+        static boolean validBST2(Node root)  //    METHOD--2 [TC--O(N)] [SC-O(N)]
         {
             if(root==null) return true;
             List<Integer> al=new ArrayList<>();

@@ -21,17 +21,6 @@ public class Inorder_pre_succesor
             display(root.left);
             display(root.right);
         }
-        static void level(Node root,int l,int n)
-        {
-            if(root==null) return;
-            if(l==n)
-            {
-            System.out.print(root.data+" ");
-            return;
-            }
-            level(root.left, l+1, n);
-            level(root.right, l+1, n);
-        }
         public static int le(Node root)
         {
             if(root==null) return 0;
@@ -47,7 +36,7 @@ public class Inorder_pre_succesor
 
         // METHOD 2 START
 
-        static int predecessor(Node root)  // THIS METHOD IS ONLY IF WE HAVE
+        /*static int predecessor(Node root)  // THIS METHOD IS ONLY IF WE HAVE
         {                               // PREDECESSOR AND SECCESSOR AT THE BELOW LEVEL 
             if(root==null) return 0;    // AS COMPARE TO ROOT
             Node p=root.left;
@@ -56,6 +45,15 @@ public class Inorder_pre_succesor
                 p=p.right;
             }
             return p.data;
+        }*/
+        static int predecessor(Node root)
+        {
+            Node pred = root.left;
+            while(pred.right!=null)
+            {
+                pred = pred.right;
+            }
+            return pred.data;
         }
         static int successor(Node root)    // THIS METHOD IS ONLY IF WE HAVE
         {                               // PREDECESSOR AND SECCESSOR AT THE BELOW LEVEL 
@@ -66,6 +64,20 @@ public class Inorder_pre_succesor
                 p=p.left;
             }
             return p.data;
+        }
+        public static void levelOrder(Node root)
+        {
+            if(root==null) return;
+            Queue<Node> q = new ArrayDeque<>();
+            q.add(root);
+            while(q.size()>0)
+            {
+                Node n = q.remove();
+                System.out.print(n.data+" ");
+                if(n.left!=null) q.add(n.left);
+                if(n.right!=null) q.add(n.right);
+            }
+            System.out.println();
         }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -78,15 +90,16 @@ public class Inorder_pre_succesor
         Node g=new Node(19);
 
         a.left=b; a.right=c;
-        b.left=d; b.right=f;
-        c.left=e; c.right=g;
+        b.left=d; b.right=e;
+        c.left=f; c.right=g;
 
 
-        /*int key=sc.nextInt();                  // INORDER PREDECESSOR AND SUCCESSOR
+        int key=sc.nextInt();                  // INORDER PREDECESSOR AND SUCCESSOR
         List<Integer> al=new ArrayList<>();
         int pred=-1,succ=-1;
         inorder(a, al);
         System.out.println(al);
+        /*
         if(key==al.get(0))
         {
             succ=al.get(1);
@@ -110,10 +123,11 @@ public class Inorder_pre_succesor
             }
         }
         System.out.println(pred);
-        System.out.println(succ);
+        System.out.println(succ);*/
         System.out.println(predecessor(a));
-        System.out.println(successor(a));*/
+        System.out.println(successor(a));
 
-            level(a, 1, le(a));
+        levelOrder(a);
+
     }
 }

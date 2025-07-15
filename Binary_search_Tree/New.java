@@ -11,13 +11,13 @@ public class New
             this.data=data;
         }
     }
-    public static int max(Node root)
+    public static int max(Node root)  // T.C -- O(log(n))
     {
         if(root==null) return 0;
         if(root.left==null && root.right==null) return root.data;
         return max(root.right);
     }
-    public static int min(Node root)
+    public static int min(Node root)  // T.C -- O(log(n))
     {
         if(root==null) return 0;
         if(root.left==null && root.right==null) return root.data;

@@ -21,8 +21,8 @@ public class Insert_At_END_BST
             display(root.left);
             display(root.right);
         } 
-        static Node insert(Node root,int v)   // INSERT IN BST AT END
-        {
+        static Node insert(Node root,int v)   // INSERT IN BST AT END 
+        {                                       // T.C -- O(log(n))
             if(root==null) return new Node(v);
             if(v<root.data)
             {

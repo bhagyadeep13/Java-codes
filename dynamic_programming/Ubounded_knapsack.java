@@ -8,7 +8,7 @@ public class Ubounded_knapsack
         if(dp[i][C]!=-1) return dp[i][C];
         int skip = helper(i+1, p, w,C,dp);
         if(w[i]>C) return dp[i][C] = skip;
-        int pick = p[i] + helper(i,p,w,C-w[i],dp);
+        int pick = p[i] + helper(i,p,w,C-w[i],dp);  // repeat again
         return dp[i][C] = Math.max(skip,pick);
     }
         public static void main(String[] args) 
