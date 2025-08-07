@@ -27,13 +27,7 @@ public class keys_and_rooms_DFS
         r.add(a); r.add(b); r.add(c); r.add(d);
         boolean[] vis = new boolean[r.size()];
         vis[0]=true;
-        for(int i=0;i<r.size();i++)
-        {
-            if(vis[i])
-            {
-                dfs(r,vis,i);
-            }
-        }
+        dfs(r,vis,0);
         for(int i=0;i<vis.length;i++)
         {
             if(vis[i]==false) 

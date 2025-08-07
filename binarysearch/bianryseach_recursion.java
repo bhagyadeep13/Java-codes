@@ -4,7 +4,7 @@ public class bianryseach_recursion
 {
     static boolean search(int[] a,int t,int st,int end)
     {
-        if(st>=end) return false;
+        if(st>end) return false;
         int mid=st+(end-st)/2;
         if(a[mid]==t)
         {
@@ -21,14 +21,8 @@ public class bianryseach_recursion
         }
     }
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int target=sc.nextInt();
-        int[] a=new int[n];
-        for(int i=0;i<n;i++)
-        {
-            a[i]=sc.nextInt();
-        }
-        System.out.println(search(a,target,0,a.length-1));
+        int[] a = {0,1,2};
+        int t = 0;
+        System.out.println(search(a,t,0,a.length-1));
     }
 }

@@ -1,39 +1,47 @@
 package practice;
 
-import java.util.Arrays;
-
+import java.util.*;
 
 public class a 
 {
-    static String s2="aeiouAEIOU";
-    public static boolean isvowel(char ch)
+    static class Pair
     {
-        if(s2.indexOf(ch)!=-1)
-        return true;
-        else
-        return false;
+      int val;
+      int idx;
+      Pair(int val,int idx)
+      {
+        this.val = val;
+        this.idx = idx;
+      }
     }
-    public static void main(String[] args) {
-        String s1="";
-        String s="lEetcOde";
-        for(int i=0;i<s.length();i++)
-        {
-            if(isvowel(s.charAt(i)))
-            s1=s1+s.charAt(i);
-        }
-        char[] ch1=s1.toCharArray();
-        Arrays.sort(ch1);
-    int j=0;
-    for(int i=0;i<s.length();i++)
+    public static void main(String[] args) 
     {
-        if(isvowel(s.charAt(i)))
+        int[] a={1,2,3,4,5};
+        int[] nexGre = new int[a.length];
+        nexGre[a.length-1] = -1;
+        Stack<Pair> st = new Stack<>();
+        st.push(new Pair(a[a.length-1],a.length-1));
+        for(int i=a.length-2;i>=0;i--)
         {
-        System.out.println(s.charAt(i) +" "+ch1[j]);
-        s=s.replace(s.charAt(i), ch1[j]);
-        System.out.println(s);
-        j++;
+            int val1 = a[i];
+            while(st.size()>0)
+            {
+                if(st.peek().val>val1)
+                {
+                    nexGre[i] = st.peek().val;
+                    break;
+                }
+                st.pop();
+            }  
+            if(st.size()==0)
+            nexGre[i] = -1;
+
+            st.push(new Pair(a[i],i));
         }
-    }
-    System.out.println(s);
+        for(int i=0;i<nexGre.length;i++)
+        {
+            System.out.print(nexGre[i]+" ");
+        }
+
     }
 }

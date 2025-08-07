@@ -5,7 +5,7 @@ For each query i compute the XOR of elements from lefti to righti (that is, arr[
 Return an array answer where answer[i] is the answer to the ith query. */
 
 package Bit_manipulation;
-import java.util.*;;
+import java.util.*;
 public class XOR_queries 
 {
     public static void xorQueries(int[] arr, int[][] q)  // T.C -- O(M+N)

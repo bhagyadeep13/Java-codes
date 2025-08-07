@@ -4,28 +4,24 @@ public class squareroot
 {
     static int square(int t)
     {
-        int mid=0,ans=0;
-        int st=0,end=t;
+        int st = 0;
+        int end = t;
         while(st<=end)
         {
-            mid=st+(end-st)/2;
-            int val=mid*mid;
-            if(val==t)
-            {
-                return mid;
-            }
+            int mid = (st+end)/2;
+            int val = mid*mid;
+            if(val==t) return mid;
             else
             if(val>t)
             {
-                end=mid-1;
+                end = mid-1;
             }
             else
             {
-                st=mid+1;
-                ans=mid;
+                st = mid + 1;
             }
         }
-        return ans;
+        return end;  // true for all the cases when t == odd number
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

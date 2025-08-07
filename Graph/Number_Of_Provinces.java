@@ -35,7 +35,7 @@ public class Number_Of_Provinces
             }
         }
     }
-    public static void main(String[] args) 
+    public static void main(String[  ] args) 
     {
         int[][] adj={{0,1,0},{1,0,0},{0,0,0}};
         int n=adj.length;

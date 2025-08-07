@@ -77,7 +77,7 @@ public class Number_of_Islands
             }
         }
     }
-    public static int numIslands(char[][] g) 
+    public static int numIslands(char[][] g) // simply apply bfs 
     {
         int m=g.length;
         int n=g[0].length;

@@ -2,8 +2,9 @@ package Graph;
 import java.util.*;
 public class Topological_sort 
 {
+    // For DAG and can also be disconnected 
     public static void dfs(boolean[] vis,List<List<Integer>>  adj, int i, List<Integer> al)
-    {
+    { 
         vis[i]=true;
         for(int j=0;j<adj.get(i).size();j++)
         {

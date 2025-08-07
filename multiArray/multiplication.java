@@ -17,8 +17,8 @@ public class multiplication
     public static void main(String[] args) 
     {
         Scanner sc=new Scanner(System.in);
-        int[][] a=new int[3][3];
-        int[][] b=new int[3][3];
+        int[][] a=new int[3][2];
+        int[][] b=new int[2][3];
         for(int i=0;i<a.length;i++)
         {           
             for(int j=0;j<a[0].length;j++)
@@ -38,9 +38,9 @@ public class multiplication
         {
             for(int j=0;j<c[0].length;j++)
             {
-               for(int k=0;k<a[0].length;k++)
+               for(int k=0;k<a[0].length;k++)  // a[0] IMP
                {
-                c[i][j]+=a[i][k]*b[k][j];
+                    c[i][j]+=a[i][k]*b[k][j];
                }
             }
         }

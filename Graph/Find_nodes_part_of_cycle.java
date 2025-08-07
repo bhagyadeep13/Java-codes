@@ -1,4 +1,4 @@
-// Find the nodes which are not a part of a cycle in directed graph
+// Find the nodes which are part of a cycle in directed graph
 
 package Graph;
 import java.util.*;

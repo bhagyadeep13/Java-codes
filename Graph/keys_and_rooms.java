@@ -45,13 +45,7 @@ public class keys_and_rooms
         r.add(a); r.add(b); r.add(c); r.add(d);
         boolean[] vis = new boolean[r.size()];
         vis[0]=true;
-        for(int i=0;i<r.size();i++)
-        {
-            if(vis[i])
-            {
-                bfs(r,vis,i);
-            }
-        }
+        bfs(r,vis,0);
         for(int i=0;i<vis.length;i++)
         {
             if(vis[i]==false) 

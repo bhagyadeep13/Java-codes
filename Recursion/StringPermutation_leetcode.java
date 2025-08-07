@@ -7,8 +7,8 @@ public class  StringPermutation_leetcode
         {
             if(s.length()==0)
             {
-            al.add(ans);
-            return;
+                al.add(ans);
+                return;
             }
             for(int i=0;i<s.length();i++)
             {

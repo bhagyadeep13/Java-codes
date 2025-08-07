@@ -51,8 +51,8 @@ public class Print_LCS
     }
     public static void main(String[] args) 
     {
-        String s1 = "abcde";
-        String s2 = "aced";
+        String s1 = "delete";
+        String s2 = "leet";
 
         int[][] dp = new int[s1.length()+1][s2.length()+1];
         helper(s1, s2, s1.length(), s2.length(), dp);

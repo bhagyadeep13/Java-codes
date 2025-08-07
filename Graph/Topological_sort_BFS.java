@@ -2,13 +2,13 @@ package Graph;
 import java.util.*;
 public class Topological_sort_BFS 
 {
-    // Kahn's algorithm
+    // Kahn's algorithm T.C -- O(V+E)
     public static void bfs(List<List<Integer>> adj,int[] deg,List<Integer> al)
     {
-        Queue<Integer> q=new ArrayDeque<>();
+        Queue<Integer> q=new ArrayDeque<>(); // make a queue
         for(int i=0;i<adj.size();i++)
         {
-            if(deg[i]==0)
+            if(deg[i]==0)   // if Degree of i node is 0 add it into the queue
             {
                 q.add(i);
             }
@@ -16,12 +16,12 @@ public class Topological_sort_BFS
         while(q.size()>0)
         {
             int front = q.remove();
-            al.add(front);
+            al.add(front);           // add the node to ans list
             for(int i=0;i<adj.get(front).size();i++)
             {
                 int val =adj.get(front).get(i);
-                deg[val]--;
-                if(deg[val]==0)
+                deg[val]--;                    // Decrease the degree by 1
+                if(deg[val]==0)                // if Degree of i node is 0 now add it into the queue
                 {
                     q.add(val);
                 }
@@ -47,7 +47,7 @@ public class Topological_sort_BFS
         {
             for(int j=0;j<adj.get(i).size();j++)
             {
-                inDegree[adj.get(i).get(j)]++;
+                inDegree[adj.get(i).get(j)]++;  // fill the inDegree Array
             }
         }
         List<Integer> al=new ArrayList<>();

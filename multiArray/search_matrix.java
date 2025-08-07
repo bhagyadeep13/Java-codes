@@ -2,19 +2,23 @@ package multiArray;
 import java.util.*;
 public class search_matrix 
 {
-    static boolean search(int[][] a,int target)
+    static boolean search(int[][] a,int t)
     {
-        int i=a.length-1,j=0;
-        while(i>=0&&j<a[0].length)
-        {
-            if(a[i][j]==target)
+        // start with top right corner
+        int i=0;
+        int j=a[0].length-1;
+        while(i<a.length && j>=0)                       // T.C IN Worst Case - O(n+m)
+        {                                               // T.C IN Best Case - O(1)
+            if(a[i][j]==t) return true;
+            if(a[i][j]<t)
             {
-               return true;
+                i++;
             }
-            else if(a[i][j]>target)
-            i--;
             else
-            j++;
+            if(a[i][j]>t)
+            {
+                j--;
+            }
         }
         return false;
     }

@@ -5,16 +5,12 @@ public class subsets
     static List<List<Integer>> all;
     static List<Integer> all1;
     static boolean ans;
-    static void subset(int i,int[] a,ArrayList<Integer> al)
+    static void subset(int i,int[] a,List<Integer> al)
     {
         if(i==a.length)
         {
-            ArrayList<Integer> al1=new ArrayList<>();
-            for(int j=0;j<al.size();j++)
-            {
-                al1.add(al.get(j));
-            }
-            all.add(al1);
+            ArrayList<Integer> al1=new ArrayList<>(al);
+            System.out.println(al1);
             return;
         }
         subset(i+1,a,al);
@@ -54,9 +50,9 @@ public class subsets
         {
             a[i]=sc.nextInt();
         }
-        /*List<List<Integer>> all=new ArrayList<>();
-        subset(0,a,all);
-        System.out.println(all);*/
+        List<Integer> al1=new ArrayList<>();
+        subset(0,a,al1);
+
         List<Integer> al= new ArrayList<>();
         subsets2(0, a, al,1);
         System.out.println(ans);
