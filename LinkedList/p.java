@@ -1,91 +1,86 @@
 package LinkedList;
 
-class Node
-{
-    int data;
-    Node next;
-    Node(int data)
-    { 
-        this.data = data;
-    }
-} 
-class LinkedList
-{
-    static Node head,tail;
-    public void insertAtFront(int b)
-    {
-        Node temp = new Node(b);
-        if(head==null)
-        {
-            head = temp;
-            tail = temp;
-        }
-        else
-        {
-            temp.next = head;
-            head  = temp;
-        }
-    }
-    public void print()  // Iterative print
-    {
-      Node temp = head;
-      while(temp != null)
-      {
-        System.out.print(temp.data+" ");
-        temp = temp.next;
-      }
-      System.out.println();
-     // System.out.println(head.data);
-      //System.out.println(tail.data);
-    }
-    public void insertAtEnd(int a)
-    {
-        Node temp = head;
-        Node newNode = new Node(a);
-        if(head==null)
-        {
-            insertAtFront(a);
-        }
-        else
-        {
-            tail.next = newNode;
-            tail = newNode;     // tail ko newNode pe shift kar do
-        }
-    }
-    public void insert(int a)
-    {
-        Node temp1 = new Node(a);
-        Node temp = head;
-        Node prev = null;
-        while(temp!=null && temp.data<=a)
-        {
-            prev = temp;
-            temp=temp.next;
-        }
-        if(prev == null)
-        {
-            temp1.next = temp;
-            head = temp1;
-        }
-        else
-        {
-            temp1.next = temp;
-            prev.next = temp1;
-        }
-    }
-}
 public class p 
 {
+    static class Node
+    {
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data = data;
+        }
+    }
+    static class LinkedList
+    {
+        Node head,tail;
+        int size=0;
+        public void insertAtEnd(int data)
+        {
+            Node n = new Node(data);
+            if(head==null)
+            {
+                head = n;
+                tail = n;
+            }
+            else
+            {
+                tail.next = n;
+                tail = n;
+            }
+            size++;
+        }
+        public void print(Node head)
+        {
+            if(head==null) return;
+            System.out.print(head.data+" ");
+            print(head.next);
+        }
+        public void insertAtFront(int data)
+        {   
+            Node n = new Node(data);
+            if(head==null)
+            {
+                head = n;
+                tail = n;
+            }
+            else
+            {
+                n.next = head;
+                head = n;
+            }
+            size++;
+        }
+        public void delete(int idx)
+        {
+            if(idx>size-1) return;
+            if(size==0 || head==null) return;
+            if(idx==0)
+            {
+                head = head.next;
+                return;
+            }
+            Node temp=head;
+            for(int i=0;i<idx-1;i++)
+            {
+                temp=temp.next;
+            }
+            temp.next = temp.next.next;
+        }
+    }
     public static void main(String[] args) 
     {
         LinkedList ll = new LinkedList();
         ll.insertAtEnd(2);
+        ll.insertAtFront(3);
         ll.insertAtEnd(2);
         ll.insertAtEnd(3);
         ll.insertAtEnd(3);
         ll.insertAtEnd(7);
-        ll.insert(1);
-        ll.print();
+        ll.print(ll.head);
+        System.out.println();
+        ll.delete(5);
+        ll.print(ll.head);
     }
 }
 

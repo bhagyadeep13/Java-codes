@@ -8,7 +8,7 @@ public class merge_sort
         int n=b.length;
         int i=0;
         int j=0;
-        int z=0;
+        int z=0;  
         while(i<m && j<n)
         {
             if(a[i]<=b[j])

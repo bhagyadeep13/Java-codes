@@ -43,7 +43,7 @@ public class coin_change_1
     {
         if(i==arr.length) return Integer.MAX_VALUE;
         if(sum==0) return 0;
-        if(dp[i][sum]!=0) return dp[i][sum];
+        if(dp[i][sum]!=0)      return dp[i][sum];
         long skip = helper(arr, i+1,sum,dp);
         if(arr[i]<=sum)
         {
@@ -57,8 +57,8 @@ public class coin_change_1
     }
     public static void main(String[] args) 
     {
-        int[] val = {1,2,3};
-        int sum = 5;
+        int[] val = {4,5};
+        int sum = 11;
 
         long[][] dp = new long[val.length+1][sum+1];
         System.out.println(Unknapsack(val, dp));

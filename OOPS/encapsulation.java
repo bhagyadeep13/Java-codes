@@ -1,26 +1,26 @@
 package OOPS;
 
-class Employee
+public class encapsulation 
 {
+    static class Employee
+    {
     private String name;
     private int age;
 
-    public void setter(String n,int a)
+    private void setter(String n,int a)
     {
-        name = n;
-        age = a;
+        this.name = n;
+        this.age = a;
     }
-    public int getAge()
+    private int getAge()
     {
         return age;
     }
-    public String getName()
+    private String getName()
     {
         return name;
     }
 }
-public class encapsulation 
-{
     public static void main(String[] args) 
     {
         Employee ee = new Employee();

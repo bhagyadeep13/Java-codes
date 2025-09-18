@@ -46,7 +46,6 @@ public class count_invertions
     public static void mergeSort(int[] a)
     {
         int n = a.length;
-
         if(n<=1) return;
 
         int mid = n / 2;

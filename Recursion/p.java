@@ -2,28 +2,26 @@ package Recursion;
 import java.util.*;
 public class p 
 {
-    static void generate(int[] a,int i,int value)
+    public static void helper(int o,int c,String s,int n)
     {
-        if(i==0)
+        if(s.length()==2*n)
         {
-            System.out.println(value);
+            System.out.println(s);
             return;
         }
-        generate(a, i-1,value+(2*a[i]));
+        if(o<n)
+        {
+            helper(o+1, c, s+"(",n);
+        }
+        if(c<o && c<n)
+        {
+            helper(o, c+1, s+")", n);
+        }
     }
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int[] a=new int[n];
-        for(int i=0;i<n;i++)
-        {
-            a[i]=sc.nextInt();
-        }
-        for(int x:a)
-        {
-            System.out.print(x+" ");
-        }
-        generate(a,a.length-1,0);
+    public static void main(String[] args) 
+    {
+        int n=5;
+        helper(0,0,"", n);
     }
 }
 

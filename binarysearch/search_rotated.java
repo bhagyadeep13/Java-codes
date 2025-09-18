@@ -34,7 +34,7 @@ public class search_rotated
     public static void main(String[] args) {
         int[] a= {1,3,8,12,4,2};
         int x = 4;
-        int ans=search(a,x);
+        int ans=search_rotate(a,x);
         System.out.println(ans);
 
         System.out.println(search_rotate(a, x));

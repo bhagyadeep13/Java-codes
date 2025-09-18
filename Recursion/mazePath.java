@@ -23,7 +23,6 @@ public class mazePath
          n=sc.nextInt();
          m=sc.nextInt();
         System.out.println(maze(0,0));
-
         System.out.println(maze2(m-1, n-1));
     }
 }

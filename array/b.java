@@ -2,29 +2,29 @@ package array;
 import java.util.*;
 public class b 
 {
-    public static void main(String[] args) {
-        int n=10;
-        int factor=1;
-        StringBuilder s=new StringBuilder("");
-        while(n > 0)
+    public static void helper(int[] a,int i,int j)
+    {
+        while(i<=j)
         {
-             s.append(n%2);
-             n=n/2;
+            int temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+            i++;
+            j--;
         }
-        for(int i=0;i<s.length();i++)
+    }
+    public static void main(String[] args) 
+    {
+        int[] a={1,2,3,4,5};
+        int k=2;
+        k=k%a.length;
+        int val = a.length-k-1;
+        helper(a,0,a.length-k-1);
+        helper(a, a.length-k, a.length-1);
+        helper(a, 0, a.length-1);
+        for(int i=0;i<a.length;i++)
         {
-            if(s.charAt(i)=='1')
-            s.setCharAt(i, '0');
-            else
-            s.setCharAt(i, '1');
+            System.out.println(a[i]+" "+val);
         }
-        int ans=0;
-        int k=0;
-        for(int i=s.length()-1;i>=0;i--)
-        {
-            ans=ans+(Integer.parseInt(""+s.charAt(i))*(int)Math.pow(2,k));
-            k++;
-        }
-        System.out.println(ans);
     }
 }

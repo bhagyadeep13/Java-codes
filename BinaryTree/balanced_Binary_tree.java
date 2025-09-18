@@ -28,7 +28,6 @@ public class balanced_Binary_tree {
         return true;
         level(root);
         return ans;
-
     }
     public static void main(String[] args) 
     {

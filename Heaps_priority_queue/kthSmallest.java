@@ -5,7 +5,7 @@ public class kthSmallest
     public static int smallest1(int[] a,int k)  
     {
         PriorityQueue<Integer> p=new PriorityQueue<>(Collections.reverseOrder());
-        for(int i=0;i<a.length;i++)
+        for(int i=0;i<a.length;i++)       //  T.C -- O(N*LOG(k))
         {
             p.add(a[i]);
             if(p.size()>k)
@@ -20,7 +20,7 @@ public class kthSmallest
     {
         int val=0;
         PriorityQueue<Integer> p=new PriorityQueue<>();
-        for(int i=0;i<a.length;i++)      
+        for(int i=0;i<a.length;i++)            // T.C -- O(N*LOG(N))
         {                               
             p.add(a[i]);
         }

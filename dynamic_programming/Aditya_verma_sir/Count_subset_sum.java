@@ -34,7 +34,7 @@ public class Count_subset_sum
     }
     public static void main(String[] args) 
     {
-        int[] a={1,3,5};
+        int[] a={1,2,3,3};
         int sum1=5;
         int[][] dp = new int[a.length+1][sum1+1];
         System.out.println(helper(a, sum1, dp));

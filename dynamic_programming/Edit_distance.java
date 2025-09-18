@@ -1,67 +1,48 @@
-// 72. Edit Distance
-
-/*Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2.
-You have the following three operations permitted on a word:
-Insert a character
-Delete a character
-Replace a character */
-
-/*Input: word1 = "horse", word2 = "ros"
-Output: 3 */
 package dynamic_programming;
 import java.util.*;
 public class Edit_distance 
 {
-    public static int helper(int i,int j,String s1,String s2)  // RECURSION
-    {                                           // T.C -- O(POW(3,N))
-        if(i==-1) return j+1;                   // S.C - O(M*N)
-        if(j==-1) return i+1;
-        if(s1.charAt(i)==s2.charAt(j))
+    public static int helper(String s1,String s2,int n,int m)
+    {
+        if(n==0) return m; // if(n==0) we need m insertions
+        if(m==0) return n; // if(m==0) we need n deletions
+        if(s1.charAt(n-1)==s2.charAt(m-1))
         {
-            return helper(i-1, j-1, s1, s2);
+            return helper(s1, s2, n-1, m-1);
         }
         else
         {
-            int del = helper(i-1, j, s1, s2);
-            int ins = helper(i, j-1, s1, s2);
-            int rep = helper(i-1, j-1, s1, s2);
+            int del = helper(s1, s2, n-1, m);
+            int ins = helper(s1, s2, n, m-1);
+            int rep = helper(s1, s2, n-1, m-1);
             return 1+Math.min(del,Math.min(ins,rep));
         }
     }
-
-    public static int helper2(int i,int j,String s1,String s2,int[][] dp)
-    {                                            // RECURSION + MEMOIZATION
-        if(i==-1) return j+1;                   // T.C -- O(M*N)
-        if(j==-1) return i+1;                   // S.C -- O(M*N)
-        if(dp[i][j]!=-1) return dp[i][j];
-        if(s1.charAt(i)==s2.charAt(j))
+    public static int helper2(String s1,String s2,int n,int m,int[][] dp)
+    {
+        if(n==0) return m;
+        if(m==0) return n;
+        if(dp[n-1][m-1]!=0) return dp[n-1][m-1];
+        if(s1.charAt(n-1)==s2.charAt(m-1))
         {
-            return dp[i][j] = helper2(i-1, j-1, s1, s2,dp);
+            return dp[n-1][m-1] = helper2(s1, s2, n-1, m-1,dp);
         }
         else
         {
-            int del = helper2(i-1, j, s1, s2,dp);
-            int ins = helper2(i, j-1, s1, s2,dp);
-            int rep = helper2(i-1, j-1, s1, s2,dp);
-            return dp[i][j] = 1+Math.min(del,Math.min(ins,rep));
+            int del = helper2(s1, s2, n-1, m,dp);
+            int ins = helper2(s1, s2, n, m-1,dp);
+            int rep = helper2(s1, s2, n-1, m-1,dp);
+            return dp[n-1][m-1] = 1+Math.min(del,Math.min(ins,rep));
         }
     }
-    public static void main(String[] args) 
-    {
-        String s1="horse";
-        String s2="ros";
-        int m=s1.length();
-        int n=s2.length();
-        System.out.println(helper(m-1,n-1, s1, s2));
+    public static void main(String[] args) {
 
-        int[][] dp=new int[m][n];
-        for(int i=0;i<dp.length;i++)
-        {
-            for(int j=0;j<dp[0].length;j++)
-            {
-                dp[i][j] = -1;
-            }
-        }
-        System.out.println(helper2(m-1, n-1, s1, s2, dp));
+        String s1 = "horse";
+        String s2 = "ros";
+
+        System.out.println(helper(s1, s2, s1.length(), s2.length()));
+
+        int[][] dp = new int[s1.length()+1][s2.length()+1];
+        System.out.println(helper2(s1, s2, s1.length(), s2.length(), dp));
     }
 }

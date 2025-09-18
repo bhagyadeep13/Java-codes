@@ -48,7 +48,7 @@ public class coin_change
     }
     public static void main(String[] args) 
     {
-        int[] arr = {1,2,3};
+        int[] arr = {1,2,5}; // count subset with given sum in unbounded nature
         int sum=5;
 
         int[][] dp = new int[arr.length+1][sum+1];

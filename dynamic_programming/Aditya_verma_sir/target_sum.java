@@ -18,7 +18,7 @@ Explanation: There are 5 ways to assign symbols to make the sum of nums be targe
 +1 + 1 + 1 - 1 + 1 = 3
 +1 + 1 + 1 + 1 - 1 = 3 */
 
-public class target_sum 
+public class target_sum  // count subset with given diff
 {
     public static int helper(int[] arr,int sum,int[][] dp)
     {
@@ -45,8 +45,7 @@ public class target_sum
             }
         }
         return dp[dp.length-1][dp[0].length-1];
-    }
-
+    } 
     public static void main(String[] args) 
     {
         int[] a={1,1,1,1,1};

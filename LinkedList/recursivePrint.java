@@ -8,7 +8,6 @@ class Node
           this.data=data;
         }
     }
-
 public class recursivePrint
 {
     public static void print(Node head)  // Recursive print
@@ -38,6 +37,5 @@ public class recursivePrint
       print(n);
       System.out.println();
       reversePrint(n);
-      
     }
 }

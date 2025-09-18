@@ -31,9 +31,35 @@ public class House_robber2
        dp[i-2]=Math.max(nums[0]+dp[i-4],dp[i-3]);
        return dp[dp.length-1];
     }
+
+    // method 2 
+    public static int helper(int[] a,int n,int[] dp) 
+    {
+        if(n<=0) return 0;
+        if(dp[n]!=-1) return dp[n];
+        int take = a[n-1] + helper(a, n-2,dp);
+        int skip = helper(a, n-1,dp);
+        return dp[n] = Math.max(take,skip);
+    }
+
     public static void main(String[] args) 
     {
         int[] a={1,2,3,1};
         System.out.println(Math.max(amount1(a),amount2(a)));
+
+        if(a.length==1) 
+        {
+            System.out.println(a[0]);
+            return;
+        }
+        
+        // Arrays.copyOfRange(a,0,a.length-1) --> Create a copy of array from st to end
+
+        int[] dp = new int[a.length+1];
+        Arrays.fill(dp,-1);
+        int val1 = helper(Arrays.copyOfRange(a,0,a.length-1),a.length-1,dp); // Exclude last ele
+        Arrays.fill(dp,-1);
+        int val2 = helper(Arrays.copyOfRange(a,1,a.length),a.length-1,dp); // Exclude first ele
+        System.out.println(Math.max(val1,val2));
     }
 }

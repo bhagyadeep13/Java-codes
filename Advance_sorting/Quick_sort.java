@@ -2,7 +2,7 @@ package Advance_sorting;
 
 public class Quick_sort 
 {
-    public static void swap(int[] a,int i,int j)
+    public static void swap(int[] a,int i,int j) // swap the number at two indexes
     {
         int temp = a[i];
         a[i] = a[j];
@@ -11,18 +11,19 @@ public class Quick_sort
     public static void Quicksort(int[] a,int st,int end)
     {
         if(st>end) return;  // array size 1 or less than 1
-        int val = a[st];
+        int mid = (st+end)/2;
+        int val = a[mid];
         int smallCount = 0;        // to count the number of smaller and equal element from val;
-        for(int i=st+1;i<=end;i++)
+        for(int i=st;i<=end;i++)
         {
-            if(a[i]<=val)
+            if(a[i]<=val && i!=mid)
             {
                 smallCount++;
             }
         }
-        int Correctidx = smallCount+st;
 
-        swap(a, st, Correctidx);
+        int Correctidx = smallCount+st;
+        swap(a, mid, Correctidx);
 
         int i=st,j=end;
         while(i<Correctidx && j>Correctidx)
@@ -40,7 +41,7 @@ public class Quick_sort
         Quicksort(a, Correctidx+1, end);
     }
     public static void main(String[] args) {
-        int[] a={5,9,45,42,10,6,8,7};
+        int[] a={1,2,3,4,5,6,7,8};
         Quicksort(a,0,a.length-1);
         for(int i=0;i<a.length;i++)
         {

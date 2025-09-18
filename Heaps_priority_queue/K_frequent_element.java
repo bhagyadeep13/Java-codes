@@ -8,12 +8,12 @@ public class K_frequent_element
         int val;
         Pair(int key,int val)
         {
-            this.key=key;
-            this.val=val;
+            this.key = key;
+            this.val = val;
         }
-        public  int compareTo(Pair p)
+        public int compareTo(Pair p)
         {
-            return this.val-p.val;
+            return this.val - p.val;
         }
     }
     public static int[] topKFrequent(int[] nums, int k) 
@@ -29,21 +29,19 @@ public class K_frequent_element
             else
                 h.put(nums[i],1);
         }
-        PriorityQueue<Pair> p=new PriorityQueue<>();
+        PriorityQueue<Pair> pa = new PriorityQueue<>();
         for(int ele : h.keySet())
         {
-            Pair pa=new Pair(ele,h.get(ele));
-            p.add(pa);
-            while(p.size()>k)
+            pa.add(new Pair(ele, h.get(ele)));
+            if(pa.size()>k)
             {
-                p.remove();
+                pa.remove();
             }
         }
-        int[] ans=new int[k];
-        for(int i=0;i<p.size();i++)
+        int[] ans = new int[k];
+        for(int i=0;i<k;i++)
         {
-            Pair p2=p.remove();
-            ans[i]=p2.key;
+            ans[i] = pa.remove().key;
         }
         return ans;
     }
@@ -52,5 +50,9 @@ public class K_frequent_element
         int[] a={1,1,1,2,2,3};
         int k=2;
         int[] ans=topKFrequent(a, k);
+        for(int i=0;i<ans.length;i++)
+        {
+            System.out.print(ans[i]+" ");
+        }
     }
 }

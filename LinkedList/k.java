@@ -6,7 +6,7 @@ public class k
   {
       int count=0;
       for(int i=st;i<=end;i++)
-      {
+      {     
         if(a[i]==val) count++;
       }
       return count;

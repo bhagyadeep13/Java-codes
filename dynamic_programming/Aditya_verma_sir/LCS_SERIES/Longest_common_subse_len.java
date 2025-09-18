@@ -15,6 +15,18 @@ public class Longest_common_subse_len
             return dp[n-1][m-1] = Math.max(helper(n-1, m, s1, s2,dp),helper(n, m-1, s1, s2,dp));
         }
     }
+    public static int helper2(int n,int m,String s1,String s2)
+    {
+        if(n==0 || m==0) return 0;
+        if(s1.charAt(n-1)==s2.charAt(m-1))
+        {
+            return 1 + helper2(n-1, m-1, s1, s2);
+        }
+        else
+        {
+            return Math.max(helper2(n-1, m, s1, s2),helper2(n, m-1, s1, s2));
+        }
+    }
     // TBLULATION
     public static int LCSTabu(int[][] dp,String s1,String s2,int n,int m)
     {
@@ -26,7 +38,7 @@ public class Longest_common_subse_len
                 dp[i][j] = 0;
             }
         }
-        for(int i=1;i<dp.length;i++)
+        for(int i=1;i<dp.length;i++) // n -> i and m -> j
         {
             for(int j=1;j<dp[0].length;j++)
             {
@@ -52,5 +64,7 @@ public class Longest_common_subse_len
 
         int[][] dp1 = new int[s1.length()+1][s2.length()+1];
         System.out.println(LCSTabu(dp1, s1, s2, s1.length(), s2.length()));
+
+        System.out.println(helper2(s1.length(), s2.length(), s1, s2));
     }
 }

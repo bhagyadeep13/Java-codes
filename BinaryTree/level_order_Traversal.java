@@ -37,8 +37,11 @@ public class level_order_Traversal
           {
                System.out.print(root.data+" ");
           }
-          if(root.left!=null) nthlevel(root.left, level+1, n);
-          if(root.right!=null) nthlevel(root.right, level+1, n);
+          else
+          {
+               if(root.left!=null) nthlevel(root.left, level+1, n);
+               if(root.right!=null) nthlevel(root.right, level+1, n);
+          }
      }
 
      static void levelordersimple(Node root)  //SIMPLE LEVEL ORDER TRAVERSAL USING QUEUE
@@ -54,7 +57,19 @@ public class level_order_Traversal
           }
           System.out.println();
      }
-
+     static void levelOrder(Node root)
+     {
+          Queue<Node> q = new ArrayDeque<>();
+          if(root!=null) q.add(root);
+          while(q.size()>0)
+          {
+               Node t = q.remove();
+               System.out.print(t.data+" ");
+               if(t.left!=null) q.add(t.left);
+               if(t.right!=null) q.add(t.right);
+          }
+          System.out.println();
+     }
      static void levelorder(Node root)  //LEVEL ORDER TRAVERSAL(WITH NEXT LINE) USING QUEUE
      {
           int prelevel=0;
@@ -98,6 +113,8 @@ public class level_order_Traversal
 
     levelordersimple(a);
     System.out.println();
+
+    levelOrder(a); // ye practice h
 
     levelorder(a);
 

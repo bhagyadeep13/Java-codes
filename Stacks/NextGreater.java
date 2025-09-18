@@ -3,6 +3,31 @@ package Stacks;
 import java.util.*;
 public class NextGreater 
 { 
+  public static void helper(int[] nums)
+  {
+      int[] ans = new int[nums.length];
+      Stack<Integer> st = new Stack<>();
+      st.push(nums[nums.length-1]);
+      ans[ans.length-1] = -1;
+      for(int i=nums.length-2;i>=0;i--)
+      {
+          while(st.size()>0)
+          {
+              if(st.peek()>nums[i]) 
+              {
+                ans[i] = st.peek();
+                break;
+              }
+              st.pop();
+          }
+          if(st.size()==0) ans[i] = -1;
+          st.push(nums[i]);
+      }
+      for(int i=0;i<nums.length;i++)
+      {
+        System.out.print(ans[i]+" ");
+      }
+  }
   public static void main(String[] args) 
   {
         int[] nums = {1,3,2,1,8,6,3,4};
@@ -34,5 +59,7 @@ public class NextGreater
         {
           System.out.print(ans[i]+" ");
         }
+        System.out.println();
+        helper(nums);
   }
 }

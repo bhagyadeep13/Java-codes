@@ -69,7 +69,7 @@ class LinkedList
           temp.next = t;
         }
         size++;
-      }
+    }
     public void print()  // Iterative print
     {
       Node temp = head;
