@@ -6,7 +6,7 @@ public class Zangoh
 {
     public static void main(String[] args) 
     {
-        String s="A war at Tarawa!";
+        String s=" oar at Tarawa!";
         String[] s2=s.split(" ");
         StringBuilder s1=new StringBuilder("");
         for(int i=0;i<s2.length;i++)

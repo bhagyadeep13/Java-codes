@@ -5,10 +5,10 @@ public class knapsack_Tabulation
     public static int helper2(int n,int[] val,int[] wt,int C)
     {
         if(n==0) return 0;
-        int skip = helper2(n-1, val, wt, C);
+        int skip = helper2(n-1,val,wt,C);
         if(wt[n-1]>C) return skip;
-        int take=val[n-1] + helper2(n-1, val, wt,C-wt[n-1]);
-        return Math.max(take,skip);
+        int take = val[n-1] + helper2(n-1,val,wt,C-wt[n-1]);
+        return Math.max(skip,take);
     }
     public static int helper(int[][] dp,int[] val,int[] wt,int C,int n)
     {

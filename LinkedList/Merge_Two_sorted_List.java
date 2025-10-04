@@ -32,7 +32,11 @@ public class Merge_Two_sorted_List
         }
         return t.next;
     }
-    /* This code merges two sorted linked lists into one sorted linked list by comparing their nodes one by one and attaching the smaller node to the result list. It uses a dummy node to simplify the process and returns the merged list starting from the next node after the dummy. */
+    /* This code merges two sorted linked lists into one sorted linked list by comparing 
+    their nodes one 
+    by one and attaching the smaller node to the result list. 
+    It uses a dummy node to simplify the process and returns 
+    the merged list starting from the next node after the dummy. */
   public static void main(String[] args) 
   {
         System.out.println("Done");
