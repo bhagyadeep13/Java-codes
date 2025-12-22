@@ -22,5 +22,6 @@ public class Decimal_to_base
 
       // is ka ulta below h 
       System.out.println(Integer.toString(num,base)); // direct method
+      System.out.println(Integer.parseInt(Integer.toString(num,base),3));
     }
 }

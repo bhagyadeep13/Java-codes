@@ -11,8 +11,6 @@ public class Fibonacci
         dp[n]=fibo(n-1)+fibo(n-2);
         return dp[n];
     }
-
-
     public static void fibo2(int n)    // TIME COMPLEXITY - O(N) -- TABULATION METHOD
     {
         int[] dp=new int[n+1];

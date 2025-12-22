@@ -9,7 +9,7 @@ public class binarybasic
         while(st<=end)
         {
             int mid=(st+end)/2;
-            if(mid==t)
+            if(a[mid]==t)
             {
                 return true;
             }

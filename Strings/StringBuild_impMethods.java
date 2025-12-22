@@ -29,7 +29,7 @@ public class StringBuild_impMethods
 
 // DELETE(START IDX, END IDX) ,DELETECHARAT(INT INDEX) AND INSERT(INT IDX,INT ELE)
         StringBuilder s3=new StringBuilder("Mahawar");
-            String s="naha";
+        String s="naha";
         s3.deleteCharAt(4);
         System.out.println(s3);
         s3.delete(2, 4); // delete characters from idx(2)----> idx(4)
@@ -42,6 +42,8 @@ public class StringBuild_impMethods
 
         //IndexOf--> Also return the first index of the substring
         System.out.println(s2.indexOf("deep"));   //s2="bhagyadeep"
+
+        System.out.println("deep".lastIndexOf('e'+""));
 
 
 

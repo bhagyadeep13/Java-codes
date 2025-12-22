@@ -1,6 +1,7 @@
 package Strings;
 import java.math.BigInteger;
 import java.util.*;
+
 public class BuiltinMethods
 {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class BuiltinMethods
         //STARTS WITH METHOD IN STRINGS
         System.out.println(s1.startsWith("abf"));
 
-       /*// s.toLowerCase()       // Alone nothing
+       // s.toLowerCase()       // Alone nothing
         System.out.println(s.toLowerCase());
 
         // s.toUpperCase()       // Alone nothing
@@ -20,6 +21,8 @@ public class BuiltinMethods
 
         // s.toConcatCase()       // Alone nothing
         System.out.println(s.concat(s1));
+
+        System.out.println("using"+" "+s.substring(1,4));
 
         //  INTEGER TO STRING METHOD
         int b=10;

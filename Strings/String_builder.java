@@ -14,7 +14,6 @@ public class String_builder
         StringBuilder s3=new StringBuilder("");
         System.out.println(s3.capacity());  // BY DEFAULT CAPACITY()= 16;
 
-        
         StringBuilder s1=new StringBuilder(10);
         System.out.println(s1.capacity());
         System.out.println(s1.length());

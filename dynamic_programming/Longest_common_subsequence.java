@@ -27,6 +27,21 @@ public class Longest_common_subsequence
             return dp[m][n] = Math.max(one,two);
         }
     }
+    public static int helper3(int m,String s1,int n,String s2,int[][] dp1)
+    {
+        if(m==0 || n==0) return 0;
+        if(dp1[m-1][n-1]!=0) return dp1[m-1][n-1];
+        if(s1.charAt(m-1) == s2.charAt(n-1))
+        {
+            return dp1[m-1][n-1] = 1+helper3(m-1, s1, n-1, s2,dp1);
+        }
+        else 
+        {
+            int left = helper3(m-1, s1, n, s2,dp1);
+            int right = helper3(m, s1, n-1, s2,dp1);
+            return dp1[m-1][n-1] = Math.max(left,right);
+        }
+    }
 
     public static int longestCommonSubsequence(String s1, String s2) 
     {                                                  // TABULALTION 
@@ -72,7 +87,10 @@ public class Longest_common_subsequence
         System.out.println(helper(s1.length()-1, s1,s2.length()-1,s2,dp));
 
         // Tabulation
-        System.out.println(longestCommonSubsequence(s1, s2));
+        //System.out.println(longestCommonSubsequence(s1, s2));
+
+        int[][] dp1 = new int[s1.length()+1][s2.length()+1];
+        System.out.println(helper3(s1.length(), s1, s2.length(), s2, dp1));
 
     }
 }

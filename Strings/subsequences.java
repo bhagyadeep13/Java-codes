@@ -15,7 +15,6 @@ public class subsequences
        public static void main(String[] args) 
     {
         String s="abc";
-        List<String> al=new ArrayList<>();
         subString(s,"",0);
     }
 }

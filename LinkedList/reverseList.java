@@ -1,8 +1,17 @@
 package LinkedList;
 
-public class reverseList 
-{
-  class Solution {
+ static class Node
+ {
+    int data;
+    Node next;
+    Node(int data,Node next)
+    {
+      this.data = data;
+      this.next = null;
+    }
+ }
+ static class LinkedList4
+ {
     public ListNode reverseList(ListNode head) 
     {
         ListNode c = head;
@@ -17,9 +26,8 @@ public class reverseList
         }
         return p;
     }
-}
-  public static void main(String[] args) 
-  {
-    
-  }
+    public static void main(String[] args) 
+    {
+        LinkedList4 l = new LinkedList4(10);
+    }
 }

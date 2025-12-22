@@ -48,6 +48,7 @@ public class knapsack_Tabulation
         else
             return skip;
     }
+    
     public static int helper3(int[] val,int[] wt,int C,int n)
     {
         if(C==0 || n<0) return 0;
@@ -55,6 +56,16 @@ public class knapsack_Tabulation
         if(wt[n]>C) return skip;
         int take = val[n] + helper3(val, wt, C-wt[n], n-1);
         return Math.max(take,skip);
+    }
+
+    public static int helper32(int n,int[] val,int[] wt,int C,int[][] dp)
+    {
+        if(n==0) return 0;
+        if(dp[n-1][C]!=0) return dp[n-1][C];
+        int skip = helper32(n-1, val, wt, C,dp);
+        if(wt[n-1]>C) return dp[n-1][C] = skip;
+        int take = val[n-1] + helper32(n-1, val, wt, C-wt[n-1],dp);
+        return dp[n-1][C] = Math.max(skip,take);
     }
     public static void main(String[] args) 
     {
@@ -68,5 +79,8 @@ public class knapsack_Tabulation
         System.out.println(helper3(val, wt, C, val.length-1));
 
         System.out.println(helper2(val.length, val, wt, C));
+        
+        int[][] dp2 = new int[val.length+1][C+1];
+        System.out.println(helper32(val.length, val, wt, C,dp));
     }
 }

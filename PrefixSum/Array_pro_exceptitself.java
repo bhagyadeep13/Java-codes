@@ -18,13 +18,22 @@ public class Array_pro_exceptitself
         {
             pre[i]=nums[i-1]*pre[i-1]; // 
         }
-
         int[] suff=new int[nums.length];//(suff) array by suff[i]=nums[i+1]*suff[i+1];
         pre[0]=1;
         suff[suff.length-1]=1;
         for(int i=nums.length-2;i>=0;i--)
         {
             suff[i]=nums[i+1]*suff[i+1];
+        }
+        System.out.println();
+        for(int i=0;i<nums.length;i++)
+        {
+            System.out.print(pre[i]+" "); 
+        }
+        System.out.println();
+        for(int i=0;i<nums.length;i++)
+        {
+            System.out.print(suff[i]+" "); 
         }
         for(int i=0;i<nums.length;i++)  // then put the product of suff[i]*pre[i] in nums[i]
         {
@@ -36,6 +45,7 @@ public class Array_pro_exceptitself
     {
         int[] a={1,2,3,4};
         int[] ans=productExceptSelf(a);
+        System.out.println();
         for(int i=0;i<ans.length;i++)
         {
             System.out.print(ans[i]+" ");

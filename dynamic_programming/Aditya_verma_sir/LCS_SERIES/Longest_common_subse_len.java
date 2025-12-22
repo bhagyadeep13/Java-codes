@@ -27,7 +27,7 @@ public class Longest_common_subse_len
             return Math.max(helper2(n-1, m, s1, s2),helper2(n, m-1, s1, s2));
         }
     }
-    // TBLULATION
+    // TABLULATION
     public static int LCSTabu(int[][] dp,String s1,String s2,int n,int m)
     {
         for(int i=0;i<dp.length;i++)

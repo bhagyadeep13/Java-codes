@@ -16,7 +16,6 @@ public class gfg
             else
             h.put(al.get(i),1);
         }
-        System.out.println(h);
         for(char key : h.keySet())
         {
             if(h.get(key)==1)
