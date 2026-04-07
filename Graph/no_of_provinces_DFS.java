@@ -15,7 +15,6 @@ public class no_of_provinces_DFS
                     }
                 }
             }
-        
     }
     public static void main(String[] args) 
     {

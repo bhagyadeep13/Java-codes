@@ -6,5 +6,6 @@ public class deci_to_binary
         int n=3;
         String b=Integer.toBinaryString(n);
         System.out.println(b);
+        System.out.println(Integer.bitCount(n));
     }
 }

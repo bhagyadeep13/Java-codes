@@ -18,6 +18,34 @@ public class a
         preoorder(root.left);
         preoorder(root.right);
     }
+    public static Node insert(Node root,int a)
+    {
+        if(root==null) return new Node(a);
+        if(a<=root.data)
+        {
+            if(root.left==null)
+            {
+                root.left = new Node(a);
+                return root;
+            }
+            else
+            {
+                return insert(root.left, a);
+            }
+        }
+        else
+        {
+            if(root.right==null)
+            {
+                root.right = new Node(a);
+                return root;
+            }
+            else
+            {
+                return insert(root.right, a);
+            }
+        }
+    }
     public static void main(String[] args) {
         Node a=new Node(10);
         Node b=new Node(5);
@@ -28,9 +56,12 @@ public class a
         Node g=new Node(19);
 
         a.left=b; a.right=c;
-        b.left=d; b.right=e;
-        c.left=f; c.right=g;
+        b.left=d; b.right=f;
+        c.left=e; c.right=g;
 
+        preoorder(a);
+        insert(a, 14);
+        System.out.println();
         preoorder(a);
     }
 }

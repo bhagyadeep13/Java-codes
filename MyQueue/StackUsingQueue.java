@@ -61,12 +61,14 @@ public class StackUsingQueue
   st.push(20);
   st.push(30);
   st.push(40);
+  st.display();
   System.out.println(st.pop());
   st.display();
-  System.out.println(st.peek());
-  st.display();
-  st.pop();
-  st.pop();
-  System.out.println(st.peek());
+  // System.out.println(st.peek());
+  // st.display();
+  // st.pop();
+  // st.pop();
+  // st.display();
+  // System.out.println(st.peek());
 }
 }

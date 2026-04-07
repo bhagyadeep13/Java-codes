@@ -2,9 +2,6 @@ package BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
-import javax.swing.tree.TreeNode;
-
 public class IsCompleteBinaryTree 
 {
     static class Node

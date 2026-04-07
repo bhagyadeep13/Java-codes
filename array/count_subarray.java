@@ -7,14 +7,9 @@ public class count_subarray
         int sum=0,count=0;
         for(int i=0;i<a.length;i++)
         {
-            sum=0;
             for(int j=i;j<a.length;j++)
             {
-                sum=sum+a[i];
-                if(sum==K)
-                {
-                    count++;
-                }
+                System.out.println("1");
             }
         }
         System.out.println(count);

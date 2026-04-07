@@ -31,7 +31,6 @@ public class DiameterOfTree
          diameter=left+right;
          return  1 + Math.max(left,right);
     }
-
     static int diameter(Node root)      // DIAMETER OF THE TREE
     {
         if(root==null) return 0;

@@ -44,7 +44,6 @@ public class validate_BST
             if(b<=root.data)
             flag=false;
             return Math.min(root.data,Math.min(a,b));
-
         }
 
         static boolean validBST(Node root)      // METHOD--1 [TC--O(N)] [SC-O(N)]

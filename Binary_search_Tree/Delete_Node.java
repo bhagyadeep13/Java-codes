@@ -61,7 +61,6 @@ public class Delete_Node
                     else
                     return root.left;
                 }
-
                 // CASE 3
                 else
                 {

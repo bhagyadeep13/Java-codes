@@ -22,14 +22,16 @@ public class sort2
         {
             if(i<zero)
             {
-                a[i]=0;
+                a[i] = 0;
+            }
+            else
+            if(i<one+zero)
+            {
+                a[i] = 1;
             }
             else
             {
-            if(i<one+zero)
-            a[i]=1;
-            else
-            a[i]=2;
+                a[i] = 2;
             }
         }
         for(int i=0;i<a.length;i++)

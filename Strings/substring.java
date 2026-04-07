@@ -6,9 +6,9 @@ public class substring
     {
         for(int i=0;i<s.length();i++)
         {
-            for(int j=i+1;j<s.length()+1;j++)
+            for(int j=i;j<s.length();j++)
             {
-                al.add(s.substring(i, j));
+                al.add(s.substring(i, j+1));
             }
         }
     }

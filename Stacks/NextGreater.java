@@ -13,12 +13,11 @@ public class NextGreater
       {
           while(st.size()>0)
           {
-              if(st.peek()>nums[i]) 
+              if(st.peek()>nums[i])
               {
-                ans[i] = st.peek();
-                break;
+                  ans[i] = nums[i];
+                  break;
               }
-              st.pop();
           }
           if(st.size()==0) ans[i] = -1;
           st.push(nums[i]);

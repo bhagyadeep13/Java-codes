@@ -20,7 +20,6 @@ public class sort_zero_one
                 j--;
             }
             else
-            if(a[i]==1&&a[j]==0)
         {
             int temp=a[i];
             a[i]=a[j];

@@ -18,7 +18,7 @@ public class merge_two_sort
         a1[i]=sc.nextInt();
     }
     int i=0,j=0,k=0;
-   while(i<=a.length-1||j<=a1.length-1)
+   while(i<=a.length-1 && j<=a1.length-1)
    {
     if(a[i]<=a1[j])
     {
@@ -26,18 +26,12 @@ public class merge_two_sort
         i++;
         k++;
     }
-    if(i==a.length)
-    {
-        break;
-    }
-    if(a1[j]<=a[i])
+    else
     {
         a2[k]=a1[j];
         j++;
         k++;
     }
-    if(j==a1.length)
-    break;
    }
    if(i==a.length)
    {

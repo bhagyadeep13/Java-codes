@@ -56,8 +56,8 @@ public class Longest_common_subse_len
     }
     public static void main(String[] args) 
     {
-        String s1 = "abc";
-        String s2 = "ahbgdc";
+        String s1 = "abcbda";
+        String s2 = "adbcba";
 
         int[][] dp = new int[s1.length()+1][s2.length()+1];
         System.out.println(helper(s1.length(), s2.length(), s1, s2,dp));

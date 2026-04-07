@@ -45,7 +45,8 @@ public class StringBuild_impMethods
 
         System.out.println("deep".lastIndexOf('e'+""));
 
-
+        s1.delete(0, 1); // delete characters from index 0 to 2-1=1
+        System.out.println(s1);
 
         
 

@@ -22,8 +22,8 @@ public class rotate_new {
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        reverse(a, 0, n - k - 1);
-        reverse(a, n - k, n - 1);
+        reverse(a, 0, n-k - 1);
+        reverse(a, n-k, n - 1);
         reverse(a, 0, n - 1);
         for (int i = 0; i < n; i++) {
             System.out.print(a[i] + " ");
